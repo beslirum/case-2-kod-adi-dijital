@@ -1,4 +1,4 @@
-from mlflow_logger import MLflowLogger
-from trainer import ModelTrainer
+from .trainer import ModelTrainer
+from .mlflow_logger import MLflowLogger
 
-__all__ = ["MLflowLogger", "ModelTrainer"]
+__all__ = ["ModelTrainer", 'MLflowLogger']

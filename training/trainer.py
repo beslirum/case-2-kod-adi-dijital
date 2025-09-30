@@ -1,6 +1,6 @@
 from typing import Any, Callable, Dict, Mapping, Optional, Tuple
 
-from mlflow_logger import MLflowLogger
+from .mlflow_logger import MLflowLogger
 
 class ModelTrainer:
     def __init__(
@@ -16,17 +16,6 @@ class ModelTrainer:
         self.fitted_ = False
         self.logger = mlflow_logger
 
-    def _apply_params(self):
-        """Apply params to sklearn estimators or your wrappers."""
-        if not self.params:
-            return
-        if hasattr(self.model, "set_params"):
-            self.model.set_params(**self.params)
-        elif hasattr(self.model, "set_model_params"):
-            self.model.set_model_params(**self.params)
-        elif hasattr(self.model, "model") and hasattr(self.model.model, "set_params"):
-            self.model.model.set_params(**self.params)
-
     def train(
         self,
         X,
@@ -37,7 +26,8 @@ class ModelTrainer:
         description=None,
         sample_rows=5,
     ) -> None:
-        self._apply_params()
+        self.model.set_model_params(self.params)
+        
         if log:
             if self.logger is None:
                 self.logger = MLflowLogger(enabled=True)
