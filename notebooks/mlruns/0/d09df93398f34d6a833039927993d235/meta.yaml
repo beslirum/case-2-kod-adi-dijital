@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/ogulcancicek/Downloads/case-2-kod-adi-dijital/notebooks/mlruns/0/d09df93398f34d6a833039927993d235/artifacts
+end_time: 1759217486396
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d09df93398f34d6a833039927993d235
+run_name: Random Forest Regressor Test Run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759217447143
+status: 3
+tags: []
+user_id: ogulcancicek
