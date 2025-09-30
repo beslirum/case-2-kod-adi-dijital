@@ -1,3 +1,3 @@
-from .preprocessing import standardScaler
+from .preprocessing import standardScaler, Preprocessor
 
-__all__ = ["standardScaler"]
+__all__ = ["standardScaler", "Preprocessor"]
